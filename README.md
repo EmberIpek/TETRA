@@ -1,7 +1,7 @@
 10/12/2025
 Ember Ipek – TETRA team
 --
-10/12/2025: Implemented facial recognition with OpenCV using Logitech C270 camera connected to RPi as proof of concept. RPi kept disconnecting while trying to install OpenCV. Board gets very hot and runs out of memory. To fix, increase swap size before building:
+10/12/2025: Implemented facial recognition with OpenCV Haar Cascades using Logitech C270 camera connected to RPi as proof of concept. RPi kept disconnecting while trying to install OpenCV. Board gets very hot and runs out of memory. To fix, increase swap size before building:
 
 
 ```bash
