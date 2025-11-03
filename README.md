@@ -38,3 +38,11 @@ LogiC270.set(cv2.CAP_PROP_FRAME_HEIGHT, 360)
 
 Next steps: Canny edge detection thresholds are questionable, play with different values. Apply gaussian blur to reduce noise for edge detection. Implement feature detection using SIFT. Yolo instead of cv2 for face recognition. Use QR codes for preliminary “curb detection”.
 
+--
+
+11/2/2025: Testing motor PWM and implementing obstacle avoidance using HC-SR04 ultrasonic sensor. Motor is surprisingly strong for size and voltage, recommend exercising caution during operation to avoid bloody fingers. Implement motor speed up when cat detected (stand-in for curb detection). Can control multiple motors with one driver using relay or MOSFET. Will use MOSFET for now. Weigh pros/cons.
+Obstacle avoidance implemented using two motors and proximity sensor modulates PWM signal. Timing issues cause motor 0 to either stall when time.sleep() is too low (checkdist does not receive echo signal?), or spin faster than motor 1 when time.sleep() is too high. 
+
+Next steps: Resolve echo timeout issue. Convert messy whiteboard calculations and diagrams to digital. Use buttons as stand in for orientation detection before using IMU. Eventually test 120-degree RPi cam for object recognition. Test on TETRA motor with 14V external battery, voltage regulator, and driver. **IMPORTANT**: USE MULTIMETER TO VERIFY ALL VOLTAGES AND CURRENTS WITHIN SAFE OPERATIONAL THRESHOLDS BEFORE CONNECTING TO RPI.
+
+Possible issues: Even with orientation detection, must be able to determine direction to drive. Obstacle avoidance vs curb detection conflict resolution.
