@@ -52,4 +52,6 @@ Possible issues: Even with orientation detection, must be able to determine dire
 ---
 
 ## **11/6/2025:**
-Reduced echo timing delays by returning maxValue after a set timeout period to allow execution to continue. Implemented button control for 3 motors with latching logic. PWM logic is functional with motors responding to button control signals. 12V motor schematic created, voltage divider used for ~12.5V output from 14.8V battery and verified with multimeter. Actual reading ~12.5V. Motor driver used with IRLB8721 n-channel MOSFET to control PWM logic. Wiring schematic: [![CircuitLab Schematic d4trm5m7588w](https://www.circuitlab.com/circuit/d4trm5m7588w/screenshot/540x405/)](https://www.circuitlab.com/circuit/d4trm5m7588w/tetra-motor-control/)
+Reduced echo timing delays by returning maxValue after a set timeout period to allow execution to continue. Implemented button control for 3 motors with latching logic. PWM logic is functional with motors responding to button control signals. 12V motor schematic created, voltage divider used for ~12.5V output from 14.8V battery and verified with multimeter. Actual reading ~12.5V. Motor driver used with IRLB8721 n-channel MOSFET to control PWM logic. Wiring schematic:
+
+[![CircuitLab Schematic d4trm5m7588w](https://www.circuitlab.com/circuit/d4trm5m7588w/screenshot/540x405/)](https://www.circuitlab.com/circuit/d4trm5m7588w/tetra-motor-control/)
