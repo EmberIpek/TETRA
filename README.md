@@ -59,3 +59,26 @@ Reduced echo timing delays by returning maxValue after a set timeout period to a
 Video:
 
 [![Watch the video](https://img.youtube.com/vi/uYNMLLLu1mc/default.jpg)](https://youtu.be/uYNMLLLu1mc)
+
+---
+
+## **11/29/2025:**
+Chassis prototype ready, 12V motors acquired. Reworked PWM code for use with one driver and multiple motors with MOSFETs as switches. Wired according to diagram and code tested with no results. Testing battery voltage output on one end of wire with multimeter gives 15V while other end of same wire is 2V. Possible causes: faulty wires, witchcraft. Replacing wires resolved issue. Having trouble with MOSFET, switching to relay module for motor control; will consult further with electrical team to determine solution. 12V motors successfully controlled using relay module and buttons, flipping algorithm defined and will be implemented. Motor 1 is always on, always rotates clockwise; other motors always rotate counterclockwise and determined by the face TETRA is driving on.
+
+MPU implemented, to turn on I2C and verify:
+
+```bash
+sudo raspi-config
+# Interface Options -> I2C
+sudo i2cdetect -y 1
+```
+
+The slave address of the MPU-60X0 is b110100X which is 7 bits long. The LSB bit of the 7 bit address is determined by the logic level on pin AD0. AD0 pulled to ground for address 0x68.
+MPU6050 registers: [https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf]
+
+Register 0x6B: power management, clear all bits to wake up MPU.
+
+Gyroscope output registers read 2 bytes at a time. 0x43: Gyroscope X, 0x45: Gyroscope Y, 0x47: Gyroscope Z.
+
+Next steps: Interpret gyroscope values and range of values each face corresponds to, e.g. driving on face A vs after flipping onto face B. Sleep before any more debugging.
+
