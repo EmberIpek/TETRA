@@ -101,6 +101,8 @@ sudo nmcli dev wifi connect "SSID" password "PASSWORD"
 
 <img src=https://github.com/user-attachments/assets/ec67525b-ae7b-452f-a06c-cf465c853217 />
 
+Video:
+
 [![Watch the video](https://img.youtube.com/vi/LpT0wH8ZpS4/default.jpg)](https://www.youtube.com/watch?v=LpT0wH8ZpS4)
 
 Physical pull up resistor used for gyroscope SCL line. Added GPIO cleanup and reduced motor speed to begin field testing. Cannot connect to wifi when powered with 5V regulator from battery, attempting to use capacitors to compensate for current spikes. Wifi connection obtained and TETRA car is officially untethered and ready for testing. 5V Wire on regulator smoked and melted due to swapped 15V and GND inputs, electronics were spared. Will place 2-5A fuse from battery to regulator for future electrical adventures. Need to process electrical trauma for the remainder of night.
