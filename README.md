@@ -82,3 +82,28 @@ Gyroscope output registers read 2 bytes at a time. 0x43: Gyroscope X, 0x45: Gyro
 
 Next steps: Interpret gyroscope values and range of values each face corresponds to, e.g. driving on face A vs after flipping onto face B. Sleep before any more debugging.
 
+---
+
+## **2/7/26:**
+Set up new Raspberry Pi 5, configured static IP: 192.168.0.2 for ethernet adapter, run 
+
+```bash
+sudo nano /boot/cmdline.txt
+```
+
+add “ip=192.168.0.4::192.168.0.1:255.255.255.0:rpi:eth0:off” to end of file. RPi and Ethernet IP must be on same subnet as wifi.
+
+Set up wifi for Pi 5. To set up wifi, run
+
+```bash
+nmcli dev wifi list
+sudo nmcli dev wifi connect "SSID" password "PASSWORD"
+```
+
+Physical pull up resistor used for gyroscope SCL line. Added GPIO cleanup and reduced motor speed to begin field testing. Cannot connect to wifi when powered with 5V regulator from battery, attempting to use capacitors to compensate for current spikes. Wifi connection obtained and TETRA car is officially untethered and ready for testing. 5V Wire on regulator smoked and melted due to swapped 15V and GND inputs, electronics were spared. Will place 2-5A fuse from battery to regulator for future electrical adventures. Need to process electrical trauma for the remainder of night.
+
+**2/7/26 LESSONS LEARNED**
+The wires from the battery had disconnected and I just reconnected it without thinking. I didn't use red and black like I usually do because I ran out of those colors and thought “I'll just remember or check” but used orange for negative, which I mistook for red while in a hurry. I'm usually adamant about ALWAYS using red and black for power and ground, but now I truly understand it's not just a convenience thing. I have more respect for electricity now, and now that I'm looking at my hand and see a small burn on there... I'm scared. I EVEN HAD A LITTLE FLAG THAT I MADE WITH TAPE AND WIRE THAT SAID "CAUTION 15V RAIL" AND I IGNORED IT. Double checking with multimeter is NOT optional.
+
+
+
