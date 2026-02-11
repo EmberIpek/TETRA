@@ -102,6 +102,8 @@ def normalizedDistance(dist, maxDist, minDist):
 def normalizedPWM(dist, maxDist=75, minDist=10):
 	# distance controls PWM percentage
 	duty = 100 * normalizedDistance(dist, maxDist, minDist)
+	# motor spinning way too fast, use reasonable speed for testing
+	duty *= 0.2
 	# use first pin for forward PWM and keep the other side 0
 	motorsPWM[0].ChangeDutyCycle(duty)
 	motorsPWM[1].ChangeDutyCycle(0)
@@ -225,4 +227,7 @@ PWMSetup()
 # reg 0x6B: power management, clear all bits to wake up mpu
 bus.write_byte_data(mpu_address, 0x6B, 0)
 
-loop()
+try:
+	loop()
+finally:
+	GPIO.cleanup()
