@@ -111,5 +111,10 @@ Physical pull up resistor used for gyroscope SCL line. Added GPIO cleanup and re
 
 The wires from the battery had disconnected and I just reconnected it without thinking. I didn't use red and black like I usually do because I ran out of those colors and thought “I'll just remember or check” but used orange for negative, which I mistook for red while in a hurry. I'm usually adamant about ALWAYS using red and black for power and ground, but now I truly understand it's not just a convenience thing. I have more respect for electricity now, and now that I'm looking at my hand and see a small burn on there... I'm scared. I EVEN HAD A LITTLE FLAG THAT I MADE WITH TAPE AND WIRE THAT SAID "CAUTION 15V RAIL" AND I IGNORED IT. Double checking with multimeter is NOT optional.
 
+## 3/2/26:
+Wiring diagram updated, will switch to using 4 motor controllers in the future.
 
+<img width="1148" height="734" alt="TETRA wiring" src="https://github.com/user-attachments/assets/ba817638-50e6-4aa9-a521-14cb841dec7c" />
+
+Available at: [https://www.circuitlab.com/editor/#?id=d4trm5m7588w]
 
