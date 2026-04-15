@@ -118,3 +118,13 @@ Wiring diagram updated, will switch to using 4 motor controllers in the future.
 
 Available at: [https://www.circuitlab.com/editor/#?id=d4trm5m7588w]
 
+## 4/10/26:
+Wiring diagram has been updated for 4 motor controllers:
+
+<img width="975" height="1140" alt="image" src="https://github.com/user-attachments/assets/12d0bf59-daa4-4c0d-bfe5-4da1107016e4" />
+
+Find full diagram at: [https://www.circuitlab.com/editor/#?id=d4trm5m7588w]
+
+Received USB module back and soldered wires and IMU onto a prototyping board using a GPIO extension board for Pi. Update code for use with 4 motor controllers. Pi blinking red light when powered by battery 5V regulator, indicating that it is not receiving enough voltage. Switching to outlet for power for now. Possible causes: weak connections, battery drained. Ethernet port not lighting up, trying different cables/RPi’s still result in no ethernet lights. SD card looks bent, will flash new SD card with Debian Bullseye (must use Bullseye or earlier for use with rpi.gpio!). Motor controller code updated for use with 4 motor controllers. Functions added for driving and turning on each face. Button functionality previously used for testing removed. LPWM and RPWM pairs added for each motor controller for finer control of speed/direction. Flipping algorithm defined as follows: 
+
+<img width="975" height="774" alt="image" src="https://github.com/user-attachments/assets/c69470fe-28b2-4b93-b9a8-6f1be74625e3" />
